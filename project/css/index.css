@@ -18,3 +18,10 @@ body, html {
   font-size: 26px;
   font-weight: bold;
 }
+
+.header {
+    position: relative;
+    height: 80px;
+    box-shadow: 0 2px 8px #f0f1f2, inset 0 -1px #f0f1f2;
+    z-index: 3;
+}

@@ -1,6 +1,6 @@
 "use strict"
 
-class Index {
+class TableDemo {
     initUI() {
         this.initMock();
         this.checkLogin();
@@ -34,9 +34,9 @@ class Index {
         let myTable = document.querySelector('table[is="ui-table"]');
         myTable.params.list = [10, 15, 20, 30, 50, 100];
         myTable.params.ajax.url = '/api/list';
-        myTable.params.page.current=1;
-        console.log('---------'+myTable.params.page.per)
-        myTable.params.page.per=10;
+        // myTable.params.page.current=1;
+        // console.log('---------'+myTable.params.page.per)
+        // myTable.params.page.per=10;
         myTable.params.page.keyMap={total:'total',current: 'current',per: 'per'};
         myTable.ajax({
             url:'/api/list',
@@ -53,6 +53,6 @@ class Index {
 }
 
 $(document).ready(function () {
-    const index = new Index();
-    index.initUI();
+    const tableDemo = new TableDemo();
+    tableDemo.initUI();
 });
