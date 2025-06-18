@@ -1,0 +1,9 @@
+  /* Additional custom styles */
+  body {
+      font-family: Arial, sans-serif;
+  }
+
+  .login-container {
+      width: 300px;
+      margin: 100px auto;
+  }

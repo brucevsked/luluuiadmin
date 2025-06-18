@@ -1,0 +1,124 @@
+/**
+ *
+ * @Datalist.css
+ * @author zhangxinxu
+ * @create 16-03-29
+ *
+**/
+
+datalist {
+    display: none;
+}
+
+:root {
+    --ui-datalist-icon-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%232a80eb' d='M145.659 68.949a12.874 12.874 0 0 0-18.473 0L99.479 97.233 71.772 68.949a12.874 12.874 0 0 0-18.473 0c-5.099 5.208-5.099 13.648 0 18.857l46.18 47.14 46.181-47.14c5.099-5.208 5.099-13.649-.001-18.857z'/%3E%3C/svg%3E");
+}
+
+[is="ui-datalist"]::-webkit-calendar-picker-indicator {
+   color: transparent;
+   background: var(--ui-datalist-icon-arrow) no-repeat center;
+   background-size: 20px 20px;
+   width: 20px;
+   height: 20px!important;
+   padding: 0;
+   margin: 0;
+}
+
+.ui-datalist {
+    display: none;
+    position: absolute;
+    animation: fadeIn var(--ui-animate-time, .2s);
+    z-index: 19;
+}
+
+.ui-datalist-datalist {
+    max-height: 304px;
+    background-color: var(--ui-white, #ffffff);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--ui-border, #d0d0d5);
+    border: 0 rgba(0, 0, 0, 0.2);
+    font-size: var(--ui-font, 14px);
+    position: relative;
+    overflow: auto;
+    overscroll-behavior: none;
+    -ms-scroll-chaining: none;
+}
+
+.ui-datalist-datalist::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.ui-datalist-datalist::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: calc(var(--ui-radius, 4px) + 4px);
+}
+
+.ui-datalist-datalist::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+.ui-datalist-datalist::-webkit-scrollbar-track-piece {
+    background-color: #ddd;
+}
+
+.ui-datalist-option {
+    line-height: 20px;
+    padding: 9px 12px;
+    background-color: var(--ui-white, #ffffff);
+    transition: background-color var(--ui-animate-time, .2s);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ui-datalist:empty,
+.ui-datalist-option:empty {
+    display: none;
+}
+
+.ui-datalist-option:not(.disabled):hover {
+    background-color: var(--ui-list-hover, #f0f7ff);
+}
+
+.ui-datalist-datalist > .selected {
+    background-color: var(--ui-list-selected, #e0f0ff);
+}
+
+.ui-datalist-datalist > .disabled {
+    opacity: var(--ui-opacity, .4);
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ui-datalist-value {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: inherit;
+    overflow: hidden;
+}
+
+.ui-datalist-label {
+    float: right;
+    color: var(--ui-gray, #a2a9b6);
+    font-size: calc(var(--ui-font, 14px) - 2px);
+}
+
+.ui-datalist-label + .ui-datalist-value {
+    margin-right: 60px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ui-datalist {
+        animation: none;
+    }
+    .ui-datalist-option {
+        transition: none;
+    }
+}

@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+#payment-table tr.selected {
+    background-color: #d0eaff !important;
+    font-weight: bold;
+}
+
+#pagination button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.user-info {
+  color: #007BFF;
+  font-size: 26px;
+  font-weight: bold;
+}

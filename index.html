@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+
+  <title>主页</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- 使用 viewport meta 标签在手机浏览器上控制布局 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <!-- 全屏模式,不显示工具栏和菜单栏 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- 关闭iphone电话号码链接 -->
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="stylesheet" href="lib/theme/edge/css/common/ui.min.css">
+  <link rel="stylesheet" href="project/css/index.css">
+  </link>
+</head>
+
+<body>
+
+  <div class="ui-layer" style="padding: 20px; border: 1px solid #ccc;">
+    <!-- 使用 flex 布局，左右对齐 -->
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <!-- 左侧文字 -->
+      <span class="user-info">当前用户：张三</span>
+      <!-- 右侧按钮 -->
+      <button type="warning" class="ui-button">退出</button>
+    </div>
+  </div>
+
+
+
+  <form action="" method="post" is="ui-form" style="border: 1px solid #ccc; padding: 20px;">
+
+    <div style="margin-bottom: 15px;">
+      <label for="idTel">支付金额</label>
+      <input type="text" id="tel" class="ui-input" size="20" name="tel">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="idCode">付款人名</label>
+      <input type="text" id="code" class="ui-input" size="20" name="code">
+    </div>
+
+  </form>
+
+
+
+  <h3 style="margin: 20px;">支付信息列表</h3>
+
+  <!-- 表格容器 -->
+  <div id="table-container">
+    <table class="ui-table" id="payment-table">
+      <thead>
+        <tr>
+          <th>支付ID</th>
+          <th>支付金额</th>
+          <th>支付人</th>
+          <th>创建时间</th>
+          <th>支付状态</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- 数据动态插入到这里 -->
+      </tbody>
+    </table>
+  </div>
+  <!-- 分页控件 -->
+  <div id="pagination" style="margin: 20px; text-align:center;"></div>
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/theme/edge/js/common/all.min.js"></script>
+  <script src="lib/mock-min.js"></script>
+  <script src="project/js/index.js"></script>
+
+</body>
+
+</html>
