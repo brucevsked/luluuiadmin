@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+
+  <title>tips</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="stylesheet" href="lib/theme/edge/css/common/ui.min.css" />
+  </link>
+</head>
+
+<body>
+
+  <br/><br/><br/><br/>
+  <div style="margin-bottom: 15px;">
+    <label for="amount">支付金额</label>
+    <input type="text" name="amount" id="amount" class="ui-input" size="30">
+    <i id="icon"></i>
+  </div>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/theme/edge/js/common/all.min.js"></script>
+  <script>
+    $(function () {
+      const input = $('#amount');
+      $(input).on('focus', function () {
+        icon.tips('提示，你需要输入一个整数或2位小数，如：10.01', {
+          eventType: 'none'
+        });
+      }).on('blur', function () {
+        icon['ui-tips'].hide();
+      });
+    });
+
+  </script>
+</body>
+
+</html>
