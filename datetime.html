@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+
+  <title>datetime</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="stylesheet" href="lib/theme/edge/css/common/ui.min.css" />
+
+</head>
+
+<body>
+  请选择日期：
+  <input is="ui-datetime">
+<br>
+  <input type="date" is="ui-datetime">
+2. 初始值
+  <input type="date" value="2020-11-27" is="ui-datetime">
+
+  <input type="date" value="" is="ui-datetime">
+  <br>
+  3. 类型设置
+使用原生的type属性指定是哪种日期或时间类型选择，默认是'date'类型。
+
+其他可选的类型包括：'date'、'year'、'month'、'time'、'hour'、'minute'、'date-range'、'month-range'。
+
+这个后面均会有案例演示。
+<br>
+4. 范围限制
+  <input type="date" min="2020-07-03" max="2024-02-22" is="ui-datetime">
+
+<br>
+  5. 事件
+交互过程中会触发3种事件：
+
+时间或日期选择时候的'change'事件；
+选择面板显示时候的'show'事件；
+选择面板隐藏时候的'hide'事件；
+使用示意如下：
+<input type="date" id="input" value="2020-11-27" is="ui-datetime">
+<script>
+input.addEventListener('change', function () {
+    console.log('选择的时间是：' + this.value);
+});
+input.addEventListener('show', function() {
+    console.log(`显示了，ID是${ this.id }`);
+});
+input.addEventListener('hide', function(e) {
+    console.log(`隐藏了，ID是${ this.id }`);
+});
+</script>
+
+<br>
+选择年
+<input type="year" min="2019" max="2023" is="ui-datetime">
+
+<br>
+选择月
+<input type="month" min="2019-09" max="2050-10" is="ui-datetime">
+<br>
+选择时间
+<input type="time" max="23:10" is="ui-datetime">
+<br>
+选择日期和时间
+<input type="datetime-local" is="ui-datetime">
+<br>
+月份范围
+无初始值-有范围限制
+<input type="month-range" min="2021-03" max="2025-04" is="ui-datetime">
+<br>
+从今天到2022年
+<input type="month-range" value="2022-01" is="ui-datetime">
+<br>
+完整初始值
+<input type="month-range" value="2021-01 至 2023-11" is="ui-datetime">
+
+
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/theme/edge/js/common/all.min.js"></script>
+  <script src="lib/mock-min.js"></script>
+
+</body>
+
+</html>

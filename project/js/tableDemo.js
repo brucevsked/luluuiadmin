@@ -3,6 +3,7 @@
 class TableDemo {
     initUI() {
         this.initMock();
+        this.initTable();
         this.checkLogin();
     }
 
@@ -45,6 +46,12 @@ class TableDemo {
             }
         });
 
+    }
+
+    initTable() { 
+        // 插入完表格内容后执行
+const table = document.querySelector('.ui-table');
+void table.offsetWidth; // 强制重排，让浏览器重新计算样式
     }
 
     checkLogin() {

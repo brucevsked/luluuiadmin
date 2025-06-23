@@ -11,6 +11,19 @@
 
   <link rel="stylesheet" href="lib/theme/edge/css/common/ui.min.css" />
   <link rel="stylesheet" href="project/css/tableDemo.css" />
+  <style>
+    table.ui-table tbody tr:nth-child(even) td {
+      background-color: #f9f9f9;
+    }
+
+    table.ui-table tbody tr:nth-child(odd) td {
+      background-color: #ffffff;
+    }
+
+    table.ui-table tbody tr:hover td {
+      background-color: #f0f7ff;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,11 +31,10 @@
   <h3 style="margin: 20px;">支付信息列表</h3>
 
   <!-- 表格容器 -->
-<div class="table-x">
-    <table class="ui-table table-checkbox" is="ui-table" id="payment-table">
+  <div class="table-x">
+    <table class="ui-table" is="ui-table" id="payment-table">
       <thead>
         <tr>
-          <th><input type="checkbox" is="ui-checkbox"></th>
           <th>支付ID</th>
           <th>支付金额</th>
           <th>支付人</th>
@@ -31,30 +43,30 @@
         </tr>
       </thead>
       <tbody id="table-body">
-            <!-- 模板 -->
-            <template>
-                ${ data.data.map(obj => {
-                    return `<tr>
-                        <td><input type="checkbox" is="ui-checkbox"></td>
-                        <td>${obj.id}</td>
-                        <td>${obj.amount}</td>
-                        <td>${obj.man}</td>
-                        <td>${obj.createTime}</td>
-                        <td>${obj.state}</td>
-                    </tr>`
-                }).join('') }
-            </template>
+        <!-- 模板 -->
+        <template>
+          ${ data.data.map(obj => {
+          return `<tr>
+            <td>${obj.id}</td>
+            <td>${obj.amount}</td>
+            <td>${obj.man}</td>
+            <td>${obj.createTime}</td>
+            <td>${obj.state}</td>
+          </tr>`
+          }).join('') }
+        </template>
       </tbody>
     </table>
-        <div class="table-null-x" style="display: none;" >暂无数据</div>
+    <div class="table-null-x" style="display: none;">暂无数据</div>
     <!-- 底部分页 -->
     <div class="table-page-x">
-              <div class="table-page-data">
-            共<output class="table-page-total" data-type="total">0</output>条, 每页<ui-drop class="table-page-per" data-type="per">10</ui-drop>
-        </div>
-        <div class="table-page">
-            <ui-pagination per="10"></ui-pagination>
-        </div>
+      <div class="table-page-data">
+        共<output class="table-page-total" data-type="total">0</output>条, 每页<ui-drop class="table-page-per"
+          data-type="per">10</ui-drop>
+      </div>
+      <div class="table-page">
+        <ui-pagination per="10"></ui-pagination>
+      </div>
     </div>
   </div>
 

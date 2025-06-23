@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>tips</title>
+  <title>radio</title>
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
@@ -15,24 +15,22 @@
 
 <body>
 
-  <br/><br/><br/><br/>
-  <div style="margin-bottom: 15px;">
-    <label for="amount">支付金额</label>
-    <input type="text" name="amount" id="amount" class="ui-input" size="30">
-    <i id="icon"></i>
-  </div>
+  <p>
+    <input type="checkbox" id="checkbox1" name="checkbox" is="ui-checkbox">
+    <label for="checkbox1" class="mr30 f14">复选项1</label>
+    <input type="checkbox" id="checkbox2" name="checkbox" is="ui-checkbox" checked="" >
+    <label for="checkbox2" class="mr30 f14">复选项2</label>
+    <input type="checkbox" id="checkbox3" name="checkbox" is="ui-checkbox">
+    <label for="checkbox3" class="mr30 f14">复选项3</label>
+  </p>
+
+
+
   <script src="lib/jquery.min.js"></script>
   <script src="lib/theme/edge/js/common/all.min.js"></script>
   <script>
     $(function () {
-      const input = $('#amount');
-      $(input).on('focus', function () {
-        icon.tips('提示，你需要输入一个整数或2位小数，如：10.01', {
-          eventType: 'none'
-        });
-      }).on('blur', function () {
-        icon['ui-tips'].hide();
-      });
+
     });
 
   </script>
