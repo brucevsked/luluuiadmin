@@ -1,0 +1,131 @@
+/* 基础重置和布局 */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 整体布局容器 */
+.lulu-admin-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 占满视口高度 */
+}
+
+/* 头部 */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: #f8f9fa; /* LuLu UI 可能有默认样式，这里覆盖或补充 */
+    border-bottom: 1px solid #dee2e6;
+    z-index: 1000; /* 确保在内容之上 */
+}
+
+.header-brand h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.header-nav {
+    /* 可以添加样式 */
+}
+
+.header-user {
+    /* 可以添加样式 */
+}
+
+/* 包裹侧边栏和主内容 */
+.admin-wrapper {
+    display: flex;
+    flex: 1; /* 占据剩余空间 */
+    overflow: hidden; /* 防止内容溢出 */
+}
+
+/* 侧边栏 */
+.admin-sidebar {
+    width: 220px; /* 固定宽度或使用 flex-basis */
+    background-color: #e9ecef;
+    padding: 20px 0;
+    border-right: 1px solid #dee2e6;
+    overflow-y: auto; /* 内容过多时滚动 */
+}
+
+.ui-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ui-nav-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #495057;
+    transition: background-color 0.2s;
+}
+
+.ui-nav-item:hover,
+.ui-nav-item:focus {
+    background-color: #d8dbdf;
+}
+
+.ui-nav-item.active {
+    background-color: #007bff; /* LuLu UI 主色 */
+    color: white;
+}
+
+/* 主内容区 */
+.admin-main {
+    flex: 1; /* 占据剩余宽度 */
+    overflow-y: auto; /* 内容过多时滚动 */
+    padding: 20px;
+    background-color: #fff;
+}
+
+.admin-breadcrumb {
+    margin-bottom: 20px;
+}
+
+.admin-content {
+    /* 内容区域样式 */
+}
+
+/* 底部 */
+.admin-footer {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+
+/* 响应式 - 可选 */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        position: fixed;
+        top: 60px; /* 头部高度 */
+        left: -220px; /* 默认隐藏 */
+        height: calc(100% - 60px); /* 减去头部高度 */
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .admin-sidebar.open {
+        left: 0; /* 通过 JS 控制 .open 类显示 */
+    }
+
+    .admin-main {
+        margin-left: 0; /* 小屏幕时无边距 */
+    }
+}

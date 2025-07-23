@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>LuLu UI Edge 后台管理模板</title>
+
+    <link rel="stylesheet" href="lib/theme/edge/css/common/ui.min.css">
+    <link rel="stylesheet" href="project/css/index1.css">
+
+</head>
+
+<body class="lulu-admin-layout">
+
+    <!-- 顶部导航栏 -->
+    <header class="admin-header" role="banner">
+        <div class="header-brand">
+            <h1>管理后台</h1>
+        </div>
+        <nav class="header-nav" role="navigation" aria-label="主导航">
+            <!-- 可以添加顶部导航链接 -->
+            <button class="ui-button ui-button-primary" id="toggleSidebar">菜单</button> 
+        </nav>
+        <div class="header-user">
+            <!-- 用户信息/操作 -->
+            <span>欢迎, 管理员</span>
+        </div>
+    </header>
+
+    <div class="admin-wrapper"> <!-- 包裹侧边栏和主内容区 -->
+
+        <!-- 左侧边栏 -->
+        <aside class="admin-sidebar" role="complementary" aria-label="侧边栏导航">
+            <nav>
+                <ul class="ui-nav"> <!-- 可以利用 LuLu UI 的导航样式 -->
+                    <li><a href="#" class="ui-nav-item active">仪表盘</a></li>
+                    <li><a href="#" class="ui-nav-item">用户管理</a></li>
+                    <li><a href="#" class="ui-nav-item">内容管理</a></li>
+                    <li><a href="#" class="ui-nav-item">系统设置</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- 右侧主要内容区 -->
+        <main class="admin-main" role="main">
+            <div class="admin-breadcrumb">
+                 <!-- 面包屑导航 -->
+                 <nav aria-label="面包屑导航">
+                    <ol class="ui-breadcrumb"> <!-- 假设 LuLu UI 有面包屑样式 -->
+                        <li class="ui-breadcrumb-item"><a href="#">首页</a></li>
+                        <li class="ui-breadcrumb-item active" aria-current="page">仪表盘</li>
+                    </ol>
+                 </nav>
+            </div>
+            <div class="admin-content">
+                <h2>欢迎来到管理后台</h2>
+                <p>这里是主要内容区域。你可以在这里放置表格、图表、表单等。</p>
+                <!-- 示例：使用 LuLu UI 表格 -->
+                <table class="ui-table ui-table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>名称</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>项目 A</td>
+                            <td>进行中</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>项目 B</td>
+                            <td>已完成</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+    </div> <!-- /admin-wrapper -->
+
+    <!-- 底部 (可选) -->
+    <footer class="admin-footer" role="contentinfo">
+        <p>&copy; 2024 你的公司. 版权所有.</p>
+    </footer>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/theme/edge/js/common/all.min.js"></script>
+
+    <script src="project/js/index1.js"></script> 
+
+</body>
+</html>
